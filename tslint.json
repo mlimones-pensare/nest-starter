@@ -13,7 +13,8 @@
     "interface-name": [false],
     "arrow-parens": false,
     "object-literal-sort-keys": false,
-    "whitespace": [true, "check-module"]
+    "whitespace": [true, "check-module"],
+    "prefer-const": false
   },
   "rulesDirectory": []
 }
