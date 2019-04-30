@@ -36,6 +36,7 @@ export class AppController {
   }
 
   @Get('/users')
-  async () {
+  async getUsers() {
+    return await this.userRepository.find();
   }
 }
