@@ -3,13 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './entity/User';
+import { AccountModule } from './account/account.module';
 
 @Module({
   imports: [
     AuthModule,
     TypeOrmModule.forRoot(),
-    TypeOrmModule.forFeature([User])
+    AccountModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,5 +1,7 @@
-import { Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { Credentials } from './credentials';
+import { log } from 'util';
 
 @Controller('auth')
 export class AuthController {
@@ -8,8 +10,8 @@ export class AuthController {
   }
 
   @Post('/login')
-  async login() {
-    let token = await this.authService.signIn();
+  async login(@Body() body: Credentials) {
+    let token = await this.authService.signIn(body);
     return { token };
   }
 

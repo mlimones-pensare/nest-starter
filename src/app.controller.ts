@@ -24,19 +24,4 @@ export class AppController {
   async getUser(@Req() req) {
     return { user: req.user };
   }
-
-  @Post('/users')
-  async createUser() {
-    let user = new User();
-    user.email = "user@user.com";
-    user.password = "password123";
-    user.isActive = false;
-    user = await this.userRepository.save(user);
-    return user;
-  }
-
-  @Get('/users')
-  async getUsers() {
-    return await this.userRepository.find();
-  }
 }
